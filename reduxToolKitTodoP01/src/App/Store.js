@@ -1,5 +1,5 @@
 import { configureStore } from "@reduxjs/toolkit";
 import todoReducers from "../Feature/TodoSlics";
-const store = configureStore({
+export const store = configureStore({
   reducer: todoReducers,
 });
