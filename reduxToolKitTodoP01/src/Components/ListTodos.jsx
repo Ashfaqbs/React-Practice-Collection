@@ -1,9 +1,11 @@
 import React from 'react'
-import { useSelector } from 'react-redux'
+import { useSelector, useDispatch } from 'react-redux'
+import { removeTodo } from '../Feature/TodoSlics'
 
 function Todos() {
 
     const todos = useSelector(state => state.todos)
+    const dispatcher = useDispatch()
     return (
         <>
             <div>Todos</div>
@@ -17,6 +19,8 @@ function Todos() {
                         <button
 
                             className="text-white bg-red-500 border-0 py-1 px-4 focus:outline-none hover:bg-red-600 rounded text-md"
+
+                            onClick={() => { dispatcher(removeTodo(todo.id)) }}
                         >
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
